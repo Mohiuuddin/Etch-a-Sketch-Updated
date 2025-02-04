@@ -31,6 +31,12 @@ function createGrid (dimension){
 
 createGrid(dimension);
 
+const newButton = document.querySelector(".btn-new");
+const slidingDiv = document.querySelector(".sliding-div");
 
+newButton.addEventListener("click", () => {
 
+slidingDiv.classList.add("shifted");
+
+});
 

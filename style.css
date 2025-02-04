@@ -14,20 +14,21 @@
   
   .container{
     padding: 50px 0 0 0;
-    width: 600px;
-    height: 600px;
-  /*   border: 2px solid; */
+    width: 500px;
+    height: 500px;
     background-color: #fc0d1b;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
+    z-index: 2;
+    
   }
   
   .grid{
-    width: 450px;
-    height: 450px;
+    width: 420px;
+    height: 420px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -47,14 +48,43 @@
     justify-content: space-between;
     padding: 10px;
     cursor: pointer;
+    /* background-color: #FC0D1B; */
     
   }
   .btn {
     font-size: 16px;
-    color: blue;
-    width: 70px;
-    height: 70px;
+    color: #ff6a00e3;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: none;
+    font-weight: 600;
+    
   }
+  
+  .buttons h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-size: 26px;
+  }
+
+  .sliding-div{
+    width: 500px;
+    height: 80px;
+    background-color: gold;
+    border-radius: 0 0 20px 20px;
+    margin-top: -85px; /* Initially hidden */
+    z-index: 1;
+    transition: transform 1s ease-in-out;
+    
+  }
+
+  .sliding-div.shifted {
+    transform: translateY(65px); /* Move it into view */
+  }
+
+  
   
