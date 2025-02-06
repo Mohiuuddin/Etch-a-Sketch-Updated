@@ -1,6 +1,10 @@
 
 let dimension = 16;
 const grid = document.querySelector("#grid");
+const newButton = document.querySelector(".btn-new");
+const slidingDiv = document.querySelector(".sliding-div");
+const eraseBtn = document.querySelector(".btn-clear");
+const enter = document.querySelector("#enter");
 
 function getRandomColor (){
   const r = Math.floor(Math.random() * 256);
@@ -29,14 +33,41 @@ function createGrid (dimension){
   }
 }
 
-createGrid(dimension);
-
-const newButton = document.querySelector(".btn-new");
-const slidingDiv = document.querySelector(".sliding-div");
+function clickSound(){
+    let audio = new Audio("sound/click-buttons.mp3");
+    audio.play(); 
+}
 
 newButton.addEventListener("click", () => {
+  clickSound();
+  slidingDiv.classList.add("shifted");
+  
+  });
 
-slidingDiv.classList.add("shifted");
+  eraseBtn.addEventListener('click', () => {
+    clickSound();
+    
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "white"; 
+    });
+  });
 
-});
+
+  enter.addEventListener("click", ()=>{
+    clickSound();
+    const size = document.querySelector("#size").value;
+    dimension = parseInt(size);
+    createGrid(dimension);
+    slidingDiv.classList.remove("shifted");
+  });
+
+createGrid(dimension);
+
+
+
+
+
+
+
 
